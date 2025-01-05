@@ -1,5 +1,4 @@
-from flask import Flask
-from flask import request
+from flask import Flask, request, render_template
 
 
 app = Flask(__name__)
@@ -19,6 +18,10 @@ def calc_sum():
     a = data['a']
     b = data['b']
     return {'result': a + b}
+
+@app.route('/page')
+def page():
+    return render_template('index.html', name='Flask')
 
 if __name__ == '__main__':
     app.run(debug=True)
