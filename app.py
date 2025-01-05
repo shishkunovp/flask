@@ -27,5 +27,14 @@ def page():
 def about():
     return render_template('about.html', name='О нас')
 
+@app.route('/signup', methods=['GET', 'POST'])
+def signup():
+    if request.method == 'POST':
+        username = request.form['username']
+        password = request.form['password']
+        # Здесь можно добавить логику проверки/сохранения
+        return f"Регистрация успешна. Пользователь: {username}"
+    return render_template('signup.html')
+
 if __name__ == '__main__':
     app.run(debug=True)
