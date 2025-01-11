@@ -6,7 +6,15 @@
 </head>
 <body>
    <h1>Список пользователей</h1>
-   {{name}}
+       <table>
+           {% for user in users %}
+           <tr>
+               <td>{{ user.id }}</td>
+               <td>{{ user.username }}</td>
+               <td>{{ user.password }}</td>
+           </tr>
+           {% endfor %}
+       </table>
    <h1>Форма регистрации</h1>
     <form action="/add_users" method="POST">
         <label for="username">Имя пользователя:</label>
