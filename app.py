@@ -49,7 +49,7 @@ def logout():
 @app.route('/profile')
 @login_required
 def profile():
-    return f"Привет, {current_user.username}!"
+    return render_template('profile.html', hi = f"Привет, {current_user.username}!")
 
 # Не забудьте про шифрование паролей
 from werkzeug.security import generate_password_hash, check_password_hash

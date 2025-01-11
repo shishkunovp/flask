@@ -5,7 +5,10 @@
      <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-
+<h1>{{ hi }}</h1>
+<form action="/logout" method="GET">
+        <button type="submit">Выход</button>
+    </form>
 <script src="{{ url_for('static', filename='script.js') }}"></script>
 </body>
 </html>
